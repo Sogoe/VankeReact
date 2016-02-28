@@ -1,6 +1,27 @@
 $font-size-samll: 12px;
 $baseGreen: #00a190;
 
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.title-text {
+    color: $baseGreen;
+    letter-spacing: 4px;
+    margin-top: 0;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
 .hello {
     color: red;
 }
@@ -39,7 +60,7 @@ $baseGreen: #00a190;
     .text-part {
         display: inline-block;
         vertical-align: top;
-        margin-left: 15px;
+        margin-left: 17px;
         color: $baseGreen;
         font-size: $font-size-samll;
         margin-top: 3px;
@@ -58,4 +79,83 @@ $baseGreen: #00a190;
           border-bottom-left-radius: 50%;
       }
     }
+}
+
+.course-icon {
+    background: url("../public/images/page1_button1.png");
+    background-size: 100% 100%;
+    width: 30px;
+    height: 37px;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        display: inline-block;
+        background: url("../public/images/page1_button1_shadow.png");
+        background-size: 100% 100%;
+        width: 94px;
+        height: 66px;
+        position: absolute;
+        left: 96%;
+        top: 4px;
+        content: "";
+        z-index: -1;
+    }
+}
+
+.boat-icon {
+    background: url("../public/images/page1_button2.png");
+    background-size: 100% 100%;
+    width: 35px;
+    height: 36px;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        display: inline-block;
+        background: url("../public/images/page1_button2_shadow.png");
+        background-size: 100% 100%;
+        width: 67px;
+        height: 64px;
+        position: absolute;
+        left: 11%;
+        top: 4px;
+        content: "";
+        z-index: -1;
+    }
+}
+
+.button-area {
+  text-align: center;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+
+    &:not(:nth-child(1)) {
+        margin-left: 60px;
+    }
+
+    span {
+        display: block;
+        padding: 6px;
+        margin-top: 3px;
+        color: $baseGreen;
+        border: 2px solid $baseGreen;
+    }
+  }
+}
+
+.course-button {
+    span {
+        letter-spacing: 3px;
+    }
+}
+
+.img-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  max-height: 60%;
 }

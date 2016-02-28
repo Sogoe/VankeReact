@@ -11,8 +11,8 @@ function makeEntry(array) {
 
 module.exports = {
     entry: {
-        vendor: ['react', 'react-dom', 'classnames'],
-        register: makeEntry(['./src/register.js'])
+        register: makeEntry(['./src/register.js']),
+        info: makeEntry(['./src/info.js'])
     },
     output: {
         path: './dist',
@@ -20,9 +20,13 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.png$/, loader: 'url?limit=8000' },
-            { test: /\.css$/, loader: ExtractTextPlugin.extract("style", "css!autoprefixer") },
-            { test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!autoprefixer!sass") },
+            { test: /\.png$/, loader: 'url?limit=8000&name=images/[name][hash:8].[ext]' },
+            { test: /\.css$/, loader: //ExtractTextPlugin.extract("style", "css!autoprefixer")
+                'style!css!autoprefixer'
+            },
+            { test: /\.scss$/, loader: //ExtractTextPlugin.extract("style", "css!autoprefixer!sass")
+                'style!css!autoprefixer!sass'
+            },
             { test: /\.js$/, exclude: /node_modules/, loaders: isDevelopment ? ['react-hot', 'babel'] : ['babel'] }
         ]
     },
@@ -35,11 +39,18 @@ module.exports = {
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
         new webpack.optimize.CommonsChunkPlugin('vendor', './js/vendor.js'),
-        new ExtractTextPlugin("[name].css"),
+        // new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin({
             filename: 'register.html',
-            template: './public/pages/register.html',
-            chunk: 'register'
+            template: './public/pages/base.html',
+            title: '注册页面',
+            chunks: ['vendor', 'register']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'info.html',
+            template: './public/pages/base.html',
+            title: '我的会员卡',
+            chunks: ['vendor', 'info']
         })
     ]
 };

@@ -3,31 +3,7 @@ require('../sass/register.scss');
 
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import classNames from 'classnames'
-
-class RoundButton extends Component {
-    static defaultProps = {
-        align: 'left'
-    }
-
-    static propTypes = {
-        align: React.PropTypes.oneOf(['left', 'right']),
-        icon: React.PropTypes.oneOf(['user', 'refresh'])
-    }
-
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
-        const {align, icon, ...props} = this.props;
-        return <div className={"round-button " + align} {...props}>
-            <span className="round-part"></span>
-            <i className={icon}></i>
-            {this.props.children && (<span className="text-part">{this.props.children}</span>)}
-            </div>;
-    }
-}
+import RoundButton from './components/RoundButton'
 
 class RegisterIndex extends Component {
     constructor(props) {
@@ -37,8 +13,20 @@ class RegisterIndex extends Component {
     render() {
         return (
           <div>
-            <RoundButton align="left" style={{'paddingTop': '20px'}} icon="user">SIGN<br/>UP</RoundButton>
-            <RoundButton align="right" style={{'paddingTop': '20px', 'float': 'right'}} icon="refresh"></RoundButton>
+            <RoundButton align="left" style={{'paddingTop': '10px'}} icon="user">SIGN<br/>UP</RoundButton>
+            <RoundButton align="right" style={{'paddingTop': '10px', 'float': 'right'}} icon="refresh"></RoundButton>
+            <h1 className="title-text">注册</h1>
+            <div className="button-area">
+                <a href="xx" className="course-button">
+                    <i className="course-icon"></i>
+                    <span>课程VIP</span>
+                </a>
+                <a href="xx" className="boat-button">
+                    <i className="boat-icon"></i>
+                    <span>独木舟VIP</span>
+                </a>
+            </div>
+            <img src={require("../public/images/page1_bottom.png")} className="img-bottom"/>
           </div>
         );
     }

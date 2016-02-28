@@ -1,0 +1,218 @@
+$font-size-samll: 12px;
+$baseGreen: #00a190;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.round-button {
+    display: inline-block;
+
+    .round-part {
+        display: inline-block;
+        width: 37px;
+        height: 34px;
+        background: $baseGreen;
+    }
+
+    .card {
+        margin-left: -36px;
+        margin-bottom: 10px;
+        height: 16px;
+        width: 29px;
+        display: inline-block;
+        background: url("../public/images/page7_card.png");
+        background-size: 100% 100%;
+    }
+
+    .refresh {
+        display: inline-block;
+        margin-left: -29px;
+        margin-bottom: 6px;
+        background: url("../public/images/page1_refresh.png");
+        height: 21px;
+        width: 21px;
+        background-size: 100% 100%;
+    }
+
+    .text-part {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 15px;
+        color: $baseGreen;
+        font-size: $font-size-samll + 2;
+        margin-top: 3px;
+        line-height: 1;
+    }
+
+    &.left {
+        .round-part {
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+    }
+
+    &.right {
+      .round-part {
+          border-top-left-radius: 50%;
+          border-bottom-left-radius: 50%;
+      }
+    }
+}
+
+.button-area {
+  text-align: center;
+  margin-bottom: 20px;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    position:relative;
+
+    &:not(:nth-child(1)) {
+        margin-left: 18.75%;
+    }
+
+    span {
+        display: block;
+        padding: 6px;
+        margin-top: -18px;
+        color: $baseGreen;
+        border: 2px solid $baseGreen;
+    }
+  }
+}
+
+.course-icon {
+  background: url("../public/images/page7_button1.png");
+  background-size: 100% 100%;
+  width: 67px;
+  height: 64px;
+  display: inline-block;
+  position: relative;
+  left: 16px;
+}
+
+.read-icon {
+  background: url("../public/images/page7_button2.png");
+  background-size: 100% 100%;
+  width:  80px;
+  height: 67px;
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  left: 16px;
+}
+
+.img-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  left: 0;
+}
+
+.content-container {
+  padding: 10px 0;
+  overflow: auto;
+  position: absolute;
+  top: 50px;
+  bottom: 90px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 280px;
+}
+
+.image-area {
+  padding-bottom: 30px;
+
+  .user-img {
+    width: 60px;
+    height: 80px;
+    border: 2px solid $baseGreen;
+    vertical-align: top;
+  }
+
+  div {
+    display: inline-block;
+    margin-left: 20px;
+
+    span:nth-child(n+1) {
+      line-height: 1.4;
+
+      &::before {
+        background: url("../public/images/page7_user.png");
+        background-size: 100% 100%;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        content: "";
+        margin-right: 10px;
+      }
+    }
+
+    span:nth-child(n+2) {
+      line-height: 1.4;
+
+      &::before {
+        background: url("../public/images/page7_users.png");
+        background-size: 100% 100%;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        content: "";
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.borrow-area {
+  .book-img {
+    width: 70px;
+    height: 60px;
+    border: 2px solid $baseGreen;
+    vertical-align: top;
+  }
+
+  div {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  span {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .time-text {
+    background: $baseGreen;
+    color: white;
+    margin-left: 5px;
+    padding: 3px 7px;
+  }
+}
+
+.border-button {
+  border: 2px solid $baseGreen;
+  color: $baseGreen;
+  font-size: 12px;
+  background: white;
+}
+
+.operation-area {
+  line-height: 1.5;
+  margin-top: 20px;
+
+  span {
+    vertical-align: middle;
+  }
+}
