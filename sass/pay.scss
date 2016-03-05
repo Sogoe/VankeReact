@@ -1,0 +1,143 @@
+$font-size-samll: 12px;
+$baseGreen: #00a190;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.round-button {
+    display: inline-block;
+
+    .round-part {
+        display: inline-block;
+        width: 37px;
+        height: 34px;
+        background: $baseGreen;
+    }
+
+    .user {
+        display: inline-block;
+        margin-left: -29px;
+        margin-bottom: 6px;
+        background: url("../public/images/page1_user.png");
+        height: 21px;
+        width: 15px;
+        background-size: 100% 100%;
+    }
+
+    .refresh {
+        display: inline-block;
+        margin-left: -29px;
+        margin-bottom: 6px;
+        background: url("../public/images/page1_refresh.png");
+        height: 21px;
+        width: 21px;
+        background-size: 100% 100%;
+    }
+
+    .text-part {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 17px;
+        color: $baseGreen;
+        font-size: $font-size-samll;
+        margin-top: 3px;
+    }
+
+    &.left {
+        .round-part {
+            border-top-right-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+    }
+
+    &.right {
+      .round-part {
+          border-top-left-radius: 50%;
+          border-bottom-left-radius: 50%;
+      }
+    }
+}
+
+.img-bottom {
+    width: 100%;
+    bottom: 0;
+    position: absolute;;
+}
+
+.center-area {
+  text-align: center;
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  transform: translate(0, -50%);
+  color: $baseGreen;
+  line-height: 1;
+
+  h1 {
+    font-size: 78px;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    &.result-title {
+      font-size: 36px;
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-top: 5px;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  button {
+    background: $baseGreen;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px #959595;
+    margin-left: 22px;
+  }
+
+  .col1 {
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background: $baseGreen;
+    margin-left: 10px;
+    vertical-align: bottom;
+  }
+
+  .col2 {
+    display: inline-block;
+    width: 2px;
+    height: 18px;
+    background: $baseGreen;
+    margin-left: 3px;
+    vertical-align: bottom;
+  }
+
+  .col3 {
+    display: inline-block;
+    width: 2px;
+    height: 24px;
+    background: $baseGreen;
+    margin-left: 3px;
+    vertical-align: bottom;
+  }
+}

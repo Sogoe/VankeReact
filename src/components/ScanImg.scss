@@ -1,0 +1,38 @@
+$baseGreen: #00a190;
+
+@mixin makeBorder($param1:'left', $param2:'top') {
+  position: absolute;
+  #{$param1}: 0;
+  #{$param2}: 0;
+  width: 10%;
+  height: 10%;
+  border-#{$param1}: 2px solid $baseGreen;
+  border-#{$param2}: 2px solid $baseGreen;
+}
+
+.scan-img-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 15px;
+
+  .scan-img-left-top {
+      @include makeBorder;
+  }
+
+  .scan-img-right-top {
+      @include makeBorder('right', 'top');
+  }
+
+  .scan-img-left-bottom {
+      @include makeBorder('left', 'bottom');
+  }
+
+  .scan-img-right-bottom {
+      @include makeBorder('right', 'bottom');
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

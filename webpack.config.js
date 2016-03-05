@@ -12,7 +12,8 @@ function makeEntry(array) {
 module.exports = {
     entry: {
         register: makeEntry(['./src/register.js']),
-        info: makeEntry(['./src/info.js'])
+        info: makeEntry(['./src/info.js']),
+        pay: makeEntry(['./src/pay.js'])
     },
     output: {
         path: './dist',
@@ -51,6 +52,12 @@ module.exports = {
             template: './public/pages/base.html',
             title: '我的会员卡',
             chunks: ['vendor', 'info']
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'pay.html',
+            template: './public/pages/base.html',
+            title: '支付',
+            chunks: ['vendor', 'pay']
         })
     ]
 };

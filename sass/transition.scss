@@ -1,0 +1,17 @@
+.default-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.default-enter.default-enter-active {
+  opacity: 1;
+}
+
+.default-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.default-leave.default-leave-active {
+  opacity: 0;
+}
